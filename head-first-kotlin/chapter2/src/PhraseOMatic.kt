@@ -13,4 +13,5 @@ fun main(args: Array<String>) {
 
   val phrase = "${wordArray1[rand1]} ${wordArray2[rand2]} ${wordArray3[rand3]}"
   println(phrase)
+
 }
