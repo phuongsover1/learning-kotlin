@@ -2,6 +2,7 @@ fun main(args: Array<String>) {
   val options = arrayOf("Rock", "Paper", "Scissors")
   val gameChoice = getGameChoice(options)
   val userChoice = getUserChoice(options)
+  printResult(userChoice, gameChoice)
 }
 
 
@@ -31,4 +32,17 @@ fun getUserChoice(optionsParam: Array<String>): String {
     if (!isValidChoice) println("You must enter a valid option.")
   }
   return userChoice
+}
+
+// print result
+fun printResult(userChoice: String, gameChoice: String): Unit {
+  val result: String
+  if (userChoice == gameChoice) result = "Tie"
+  else if ((userChoice == "Rock" && gameChoice == "Scissors") ||
+    (userChoice == "Scissors" && gameChoice == "Paper") ||
+    (userChoice == "Paper" && gameChoice == "Rock")
+  )
+    result = "You Win!"
+  else result = "You Lose!"
+  println("You chose $userChoice, I chose $gameChoice. $result")
 }
