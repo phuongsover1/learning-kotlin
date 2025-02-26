@@ -2,7 +2,7 @@ open class Animal {
   open val image = ""
   open val food = ""
   open val habitat = ""
-  var hunger= 10
+  var hunger = 10
 
   open fun makeNoise() {
     println("The Animal is making a noise")
@@ -54,6 +54,23 @@ class Wolf : Canine() {
     println("The Wolf is eating $food")
   }
 }
-fun main(args: Array<String>) {
 
+fun main(args: Array<String>) {
+  val w = Wolf()
+  w.makeNoise()
+  w.roam()
+  w.sleep()
+
+  val animal: Animal = Wolf()
+  animal.makeNoise()
+
+  println("Array of animals")
+
+  val animals = arrayOf(
+    Hippo(), Wolf()
+  )
+  for (item in animals) {
+    item.roam()
+    item.eat()
+  }
 }
