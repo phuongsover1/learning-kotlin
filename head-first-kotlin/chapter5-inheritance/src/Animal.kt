@@ -1,5 +1,5 @@
 open class Animal {
-  open val image = ""
+  var image = ""
   open val food = ""
   open val habitat = ""
   var hunger= 10
@@ -19,6 +19,14 @@ open class Animal {
   fun sleep() {
     println("The Animal is sleeping")
   }
+}
+
+class Hippo : Animal() {
+  init {
+    image = "hippo.jpg"
+  }
+  override val food = "grass"
+  override val habitat = "water"
 }
 fun main(args: Array<String>) {
 
