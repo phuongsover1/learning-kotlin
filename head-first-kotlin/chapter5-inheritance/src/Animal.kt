@@ -1,7 +1,7 @@
 abstract class Animal {
   abstract val image: String
   abstract val food: String
-  abstract val habitat:String
+  abstract val habitat: String
   var hunger = 10
 
   abstract fun makeNoise()
@@ -50,11 +50,13 @@ class Wolf : Canine() {
     println("The Wolf is eating $food")
   }
 }
+
 class Vet {
   fun giveShot(animal: Animal) {
     animal.makeNoise()
   }
 }
+
 fun main(args: Array<String>) {
   val animals = arrayOf(Hippo(), Wolf())
   for (item in animals) {
