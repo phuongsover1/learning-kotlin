@@ -54,23 +54,21 @@ class Wolf : Canine() {
     println("The Wolf is eating $food")
   }
 }
-
+class Vet {
+  fun giveShot(animal: Animal) {
+    animal.makeNoise()
+  }
+}
 fun main(args: Array<String>) {
-  val w = Wolf()
-  w.makeNoise()
-  w.roam()
-  w.sleep()
-
-  val animal: Animal = Wolf()
-  animal.makeNoise()
-
-  println("Array of animals")
-
-  val animals = arrayOf(
-    Hippo(), Wolf()
-  )
+  val animals = arrayOf(Hippo(), Wolf())
   for (item in animals) {
     item.roam()
     item.eat()
   }
+
+  val vet = Vet()
+  val wolf = Wolf()
+  val hippo = Hippo()
+  vet.giveShot(wolf)
+  vet.giveShot(hippo)
 }
