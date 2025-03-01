@@ -9,7 +9,7 @@ class Vehicle : Roamable {
 
 }
 
-abstract class Animal: Roamable {
+abstract class Animal : Roamable {
   abstract val image: String
   abstract val food: String
   abstract val habitat: String
@@ -82,6 +82,10 @@ fun main(args: Array<String>) {
   vet.giveShot(hippo)
 
   val roamables = arrayOf(Hippo(), Wolf(), Vehicle())
-  for (item in roamables)
+  for (item in roamables) {
     item.roam()
+    if (item is Animal) {
+      item.eat()
+    }
+  }
 }
